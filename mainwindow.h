@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QFile>
 
 namespace Ui {
 class MainWindow;
@@ -29,10 +30,16 @@ private:
     QTimer *timer;
     QChar currentChar;
 
+    QList<int> durations = {15, 30, 45};
+    QString inputData[3];
+
     void clearUI();
     void genNextChar();
     void updateUI();
     void stop();
+    void updateTop();
+    void getStat();
+
 };
 
 #endif // MAINWINDOW_H
