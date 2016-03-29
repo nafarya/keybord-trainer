@@ -11,6 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = GameLab4
 TEMPLATE = app
 
+TRANSLATIONS = arrowpad_en.ts \
+               arrowpad_ru.ts
 
 SOURCES += main.cpp\
         mainwindow.cpp

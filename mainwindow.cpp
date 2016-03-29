@@ -20,6 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
     timer = new QTimer(this);
     connect(ui->buttonStart, SIGNAL(clicked(bool)), this, SLOT(start()));
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
+    connect(ui->changeLangButton, SIGNAL(clicked(bool)), this, SLOT(changeLanguage()));
     getStat();
 
 }
@@ -109,7 +110,24 @@ void MainWindow::getStat()
     file.close();
 }
 
+void MainWindow::changeLanguage()
+{
+    QTranslator translator;
+    if (curLang == "en") {
+        translator.load("/home/dan/GameLab4/arrowpad_ru");
+        QApplication::instance()->installTranslator(&translator);
+        ui->retranslateUi(this);
+        curLang = "ru";
+        ui->changeLangButton->setText("РУС");
+    } else {
+        translator.load("/home/dan/GameLab4/arrowpad_en");
+        QApplication::instance()->installTranslator(&translator);
+        ui->retranslateUi(this);
+        ui->changeLangButton->setText("EN");
+        curLang = "en";
 
+    }
+}
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {

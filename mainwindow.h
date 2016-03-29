@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QFile>
+#include <QTranslator>
 
 namespace Ui {
 class MainWindow;
@@ -19,6 +20,8 @@ public:
 public slots:
     void start();
     void update();
+    void changeLanguage();
+
 
 protected:
     void keyPressEvent(QKeyEvent *event);
@@ -29,6 +32,7 @@ private:
     int secondsRemaining;
     QTimer *timer;
     QChar currentChar;
+    QString curLang = "en";
 
     QList<int> durations = {15, 30, 45};
     QString inputData[3];
