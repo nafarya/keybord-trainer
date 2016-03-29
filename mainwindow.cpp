@@ -46,6 +46,7 @@ void MainWindow::stop()
     timer->stop();
     ui->buttonStart->setEnabled(true);
     ui->comboBox->setEnabled(true);
+    ui->changeLangButton->setEnabled(true);
     updateTop();
 
 
@@ -127,6 +128,7 @@ void MainWindow::changeLanguage()
         curLang = "en";
 
     }
+    getStat();
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
@@ -158,6 +160,7 @@ void MainWindow::start()
     ui->labelCurChar->setText(QString(currentChar));
     ui->buttonStart->setEnabled(false);
     ui->comboBox->setEnabled(false);
+    ui->changeLangButton->setEnabled(false);
     secondsRemaining = durations[ui->comboBox->currentIndex()];
     ui->lcdTimeRemaining->display(secondsRemaining);
     timer->start(1000);
