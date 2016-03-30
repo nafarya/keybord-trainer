@@ -6,20 +6,29 @@
 
 QT       += core gui
 
+CONFIG   += c++11
+
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = GameLab4
 TEMPLATE = app
 
-TRANSLATIONS = arrowpad_en.ts \
-               arrowpad_ru.ts
 
-SOURCES += main.cpp\
-        mainwindow.cpp
 
-HEADERS  += mainwindow.h
+TRANSLATIONS = translations/arrowpad_en.ts \
+        translations/arrowpad_ru.ts
 
-FORMS    += mainwindow.ui
+SOURCES += src/main.cpp \
+        src/mainwindow.cpp
+
+INCLUDEPATH += headers
+
+HEADERS  += headers/mainwindow.h
+
+FORMS    += ui/mainwindow.ui
 
 DISTFILES += \
     statistics.txt
+
+RESOURCES += \
+    translations/translations.qrc

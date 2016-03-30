@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     QTranslator translator;
-    translator.load("/home/dan/GameLab4/arrowpad_en");
+    translator.load("arrowpad_en");
     a.installTranslator(&translator);
 
 
