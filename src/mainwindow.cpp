@@ -53,7 +53,7 @@ void MainWindow::stop()
 
 void MainWindow::updateTop()
 {
-    QFile file("/home/dan/GameLab4/statistics.txt");
+    QFile file("statistics.txt");
 
     if (!file.open(QFile::WriteOnly|QFile::Truncate))
          ui->label_3->setText(QString::number(points));
@@ -114,13 +114,13 @@ void MainWindow::changeLanguage()
 {
     QTranslator translator;
     if (curLang == "en") {
-        translator.load("/home/dan/GameLab4/arrowpad_ru");
+        translator.load("arrowpad_ru", ":/translations/");
         QApplication::instance()->installTranslator(&translator);
         ui->retranslateUi(this);
         curLang = "ru";
         ui->changeLangButton->setText("РУС");
     } else {
-        translator.load("/home/dan/GameLab4/arrowpad_en");
+        translator.load("arrowpad_en", ":/translations/");
         QApplication::instance()->installTranslator(&translator);
         ui->retranslateUi(this);
         ui->changeLangButton->setText("EN");

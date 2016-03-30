@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/translations">
+        <file>arrowpad_ru.qm</file>
+        <file>arrowpad_en.qm</file>
+    </qresource>
+</RCC>
